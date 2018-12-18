@@ -1,0 +1,57 @@
+
+ <head>
+    <link rel="stylesheet" type="text/css" href="\assets\fonts\montserrat\Montserrat-MediumItalic.ttf">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="\assets\fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="\assets\styles\forms.css">
+
+</head>
+<div class="container-contact100">
+  <div class="wrap-contact100">
+    <h1 class="contact100-form-title"> Registro vehiculos</h1>
+    <form #vehiculoForm="ngForm" (ngSubmit)="onSubmit()" class="contact100-form validate-form">
+      <div class="formControl">
+
+        <div class="wrap-input100 validate-input bg1">
+          <span class="label-input100">PLACA VEHICULO</span>
+          <input [(ngModel)]="model.placa" class="input100" type="text" id="placa" name="placa" required #placa="ngModel" style="text-transform:uppercase">
+          <div [hidden]="placa.valid || placa.pristine"
+              class="alert alert-danger font-error">
+              <span>la placa es requerida</span>
+          </div>
+        </div>
+
+        <div class="wrap-input100 input100-select bg1">
+            <span class="label-input100">TIPO VEHICULO</span>
+            <div class="wrap-contact100-form-radio">
+                <div class="contact100-form-radio m-t-15">
+                    <input class="input-radio100" id="carro" type="radio" name="tipo-carro" value="CARRO" [(ngModel)]="model.tipoVehiculo" (click)="model.cilindraje = ''">
+                    <label class="label-radio100" for="carro">
+                      Carro
+                    </label>
+                  </div>
+      
+                  <div class="contact100-form-radio">
+                    <input class="input-radio100" id="moto" type="radio" name="tipo-moto" value="MOTO" [(ngModel)]="model.tipoVehiculo">
+                    <label class="label-radio100" for="moto">
+                      Moto
+                    </label>
+                  </div>
+
+                  <div class="wrap-contact100-form-range" [hidden]="model.tipoVehiculo != 'MOTO'">
+                    <span class="label-input100">Cilindraje *</span>
+                    <input class="input100" type="number" id="cilindraje" name="cilindraje" [(ngModel)]="model.cilindraje" required="model.tipoVehiculo == 'MOTO'">
+                  </div>
+            </div>
+          </div>
+
+          <div class="container-contact100-form-btn">
+              <button type="button" class="contact100-form-btn" (click)="registrarVehiculo(); vehiculoForm.reset()">
+                  Registrar
+              </button>
+            </div>
+      </div>
+    </form>
+  </div>
+</div>
