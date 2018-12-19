@@ -1,0 +1,41 @@
+
+ <head>
+    <link rel="stylesheet" type="text/css" href="\assets\fonts\montserrat\Montserrat-MediumItalic.ttf">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="\assets\fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="\assets\styles\forms.css">
+    
+</head>
+<div class="container-contact100">
+  <div class="wrap-contact100">
+    <h1 class="contact100-form-title"> Listado vehiculos</h1>
+    <div class="table-wrapper-scroll-y">
+      <table mdbTable striped="true" class="table">
+        <thead class="grey lighten-1 black-text">
+          <tr>
+            <th *ngFor="let columna of columnas" scope="col">{{columna}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr mdbTableCol *ngFor="let vehiculo of vehiculos">
+            <td>{{vehiculo.id}}</td>
+            <td class="mayuscula">{{vehiculo.placa}}</td>
+            <td>{{vehiculo.tipoVehiculo}}</td>
+            <td>{{vehiculo.cilindraje}}</td>
+            <td>{{vehiculo.fechaIngreso | date:'short'}}</td>
+            <td>
+              <button class="contact100-form-btn" (click)="facturar(vehiculo.placa)">Facturar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      <div class="container-contact100-form-btn">
+          <button type="button" class="contact100-form-btn" (click)="listarVehiculos();">
+              Actualizar lista
+          </button>
+        </div>
+  </div>
+  
+</div>

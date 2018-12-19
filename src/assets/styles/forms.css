@@ -24,3 +24,14 @@
   .font-error{
     font-size: 15px;
   }
+
+  .table-wrapper-scroll-y {
+    display: block;
+    max-height: 400px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    .mayuscula{
+      text-transform: uppercase;
+    }

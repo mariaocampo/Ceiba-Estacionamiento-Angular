@@ -176,7 +176,7 @@ src: url('src/assets/fonts/montserrat/Montserrat-Medium.ttf');
   }
   
   .wrap-contact100 {
-    /*width: 70%;*/
+    /*width: 0%;*/
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
